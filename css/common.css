@@ -1,0 +1,321 @@
+@font-face {
+    font-family: PlantinTtf;
+    src: url("../fonts/Plantin.ttf");
+}
+
+@font-face {
+    font-family: PlantinWoff;
+    src: url("../fonts/Plantin.woff");
+}
+
+@font-face {
+    font-family: PlantinBold;
+    src: url("../fonts/Plantin-Bold.woff");
+}
+
+@font-face {
+    font-family: PlantinItalic;
+    src: url("../fonts/Plantin-Italic.woff");
+}
+
+html,
+body {
+    font-size: 20px;
+    font-family: "PlantinItalic";
+}
+
+a {
+    color: #3C3C3C;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.box-full {
+    width: 100%;
+}
+
+.box {
+    width: 1200px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.box1>div,
+.box2>div {
+    height: 100px;
+    position: relative;
+    display: inline-block;
+}
+
+.box1 p,
+.box2 p {
+    position: absolute;
+    display: inline-block;
+    color: red;
+    z-index: 2;
+}
+
+.box1 img,
+.box2 img {
+    height: 150px;
+}
+
+.box1 .img,
+.box2 .img {
+    position: relative;
+    display: flex;
+    font-size: 32px;
+    align-items: center;
+    height: 150px;
+    z-index: 1;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.box1 .img2,
+.box2 .img2 {
+    padding-top: 0;
+    margin-top: 300px;
+}
+
+.box1 .img p,
+.box2 .img p {
+    position: relative;
+    color: black;
+    font-family: 'PlantinTtf';
+    z-index: 1;
+}
+
+
+.box2 {
+    display: none;
+}
+
+.box2 p {
+    color: rgba(112, 117, 223, 1);
+}
+
+.box2 .p6 {
+    margin-top: 100px;
+}
+
+/* 动画 */
+
+.retrospection {
+    animation-name: retrospection;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.retrospection:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes retrospection {
+    from {
+        -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes retrospection {
+    from {
+        -moz-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes retrospection {
+    from {
+        -o-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@keyframes retrospection {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+.speculation {
+    animation-name: speculation;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+
+.speculation:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes speculation {
+    from {
+        -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@-moz-keyframes speculation {
+    from {
+        -moz-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@-o-keyframes speculation {
+    from {
+        -o-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@keyframes speculation {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+.activation {
+    animation-name: activation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.activation:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes activation {
+    from {
+        -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@-moz-keyframes activation {
+    from {
+        -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@-o-keyframes activation {
+    from {
+        -o-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@keyframes activation {
+    from {
+        transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+.connection {
+    animation-name: connection;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+}
+
+.connection:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes connection {
+    from {
+        -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes connection {
+    from {
+        -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes connection {
+    from {
+        -o-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@keyframes connection {
+    from {
+        transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hua</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      #myVideo {
+        width: 100vw;
+        object-fit: cover;
+        position: relative;
+        top: -50px;
+        /* z-index: -1; */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hear {
+        position: relative;
+        margin: 0 auto;
+        grid-column: 3/4;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #hear img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #hear img.top:hover {
+        opacity: 0;
+      }
+      .arrowl {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        left: 30px;
+        bottom: 20px;
+      }
+      .arrowr {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        right: 30px;
+        bottom: 20px;
+      }
+      .question {
+        font-family: PlantinBoldItalic;
+        padding-bottom: 20px;
+      }
+      .answer {
+        font-family: plantin;
+        padding-bottom: 40px;
+      }
+      .italic {
+        font-family: Plantin-LightItalic;
+      }
+      .chinese {
+        font-family: huakan;
+      }
+      .left {
+        grid-column: 5/7;
+      }
+      .right {
+        grid-column: 6/8;
+      }
+      #blur1 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur1:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerBox">
+        <div class="tabbar tabbarTitle" style="position: absolute">
+          <a href="browse-by-words.html"
+            ><p data-index="1">Browse By <span class="span3">Words</span></p></a
+          >
+          <!-- <p data-index="2">Browse By <span class="span3">Images</span></p> -->
+          <a href="shell.html"
+            ><p data-index="3">
+              <span class="span1">CALL</span> <span class="span2">Me</span>
+              <span class="span1">By</span> <span class="span2">My Name</span>
+            </p></a
+          >
+          <a href="browse-by-love.html"
+            ><p data-index="4">Browse By <span class="span3">Love</span></p></a
+          >
+          <!-- <p data-index="5">More Stories</p> -->
+        </div>
+        <video autoplay muted loop id="myVideo">
+          <source src="video/王画.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <br />
+      <br />
+      <div class="grid-container">
+        <a href="yolanda.html"><img class="arrowl" src="img/left.png" /></a>
+        <a href="joi.html"><img class="arrowr" src="img/right.png" /></a>
+        <div id="hear">
+          <img class="bottom" src="img/hear_2.png" />
+          <img class="top" src="img/hear_1.png" />
+          <audio id="sound">
+            <source src="sound/王画.m4a" type="audio/mpeg" />
+          </audio>
+        </div>
+        <p class="question right">What is your Chinese name?</p>
+        <p class="answer right">
+          <span class="chinese">王画</span> <span class="italic">Wang Hua</span>
+        </p>
+        <p class="question left">What does your name mean?</p>
+        <p class="answer left">
+          <span class="chinese">画</span>
+          <span class="italic">(hua)</span> means
+          <span id="blur1">paint/draw/painting</span>. <br />
+          My dad thinks that a newborn is like a white canvas waiting for time
+          to paint on it.
+        </p>
+
+        <p class="question right">
+          What is your English name? (Please write in pinyin if you don’t have
+          one)
+        </p>
+        <p class="answer right"><span class="italic">Hua</span></p>
+        <p class="question left">
+          Have you ever abandoned your English name? What was the reason?
+        </p>
+        <p class="answer left">
+          I used to have a name called
+          <span class="italic" id="blur2">Violet</span>, I abandoned
+          <span class="italic" id="blur3">Violet</span> because I thought it was
+          too much like an old European lady.
+        </p>
+        <p class="question right">
+          Does your name ever give you any funny, embarrassing, or uncomfortable
+          experiences?
+        </p>
+        <p class="answer right">
+          I’ve had teachers misspell my name, some people can’t pronounce it. I
+          abandoned Violet as my english name but I still use it in Starbucks so
+          I don’t have to explain.
+        </p>
+        <p class="question left">
+          Do you prefer your Chinese name or your English name? Which name
+          better represents your own identity?
+        </p>
+        <p class="answer left" id="blur4">
+          I prefer my Chinese nickname <span class="chinese">小蹦</span> (<span
+            class="italic"
+            >Xiao Beng</span
+          >), my Cat was named <span class="chinese">小跳</span> (<span
+            class="italic"
+            >Xiao Tiao</span
+          >), together we form a phrase
+          <span class="chinese">蹦蹦跳跳</span> (<span class="italic"
+            >Beng Beng Tiao Tiao</span
+          >), meanning jumping or hopping. I feel the name of Hua has a lot of
+          expectations from my family and it slightly stresses me out, while
+          <span class="chinese">蹦</span> (<span class="italic">Beng</span>)
+          sounds happier.
+        </p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      var sound = document.getElementById("sound");
+      $(document).ready(function () {
+        $(".top").hover(function () {
+          sound.play();
+        });
+      });
+    </script>
+  </body>
+</html>

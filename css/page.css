@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-image: url('../img/bg.png');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .containerBox{
+    width: 1200px;
+    height: 700px;
+    position: relative;
+}
+.container .containerBox .center{
+    width: 1200px;
+    height: 700px;
+    position: relative;
+}
+.container .containerBox .center img{
+    width: 100%;
+    position: absolute;
+    top: -100px;
+}
+.container .containerBox .center p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 22px;
+}
+.container .containerBox .center p .center1{
+    color: #FF5F57;
+    font-family: Plantin-LightItalic
+}
+.container .containerBox .center p .center2{
+    color: #6F73E7;
+    font-family: Plantin-LightItalic
+}
+.container .containerBox ul{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container .containerBox .pageul .chinese{
+    font-size: 30px;
+    color: #FF5F57;
+}
+.container .containerBox .pageul .english{
+    font-size: 30px;
+    color: #6F73E7;
+}
+.pageul p{
+    cursor: pointer;
+}
+
+.pageul li{
+    position: absolute;
+}
+.pageul .list1{
+    top: 94px;
+    left: 109px;
+}
+.pageul .list2{
+    top: 43px;
+    left: 409px;
+}
+.pageul .list3{
+    top: -9px;
+    left: 658px;
+}
+.pageul .list4{
+    top: 120px;
+    left: 850px;
+}
+.pageul .list5{
+    top: 166px;
+    left: 1057px;
+}
+.pageul .list6{
+    top: 666px;
+    left: 1057px;
+}
+.pageul .list7{
+    top: 854px;
+    left: 621px;
+}
+.pageul .list8{
+    top: 796px;
+    left: 848px;
+}
+.pageul .list9{
+    top: 866px;
+    left: 267px;
+}
+.pageul .list10{
+    top: 666px;
+    left: 167px;
+}
+
+.pageul .on{
+    position: relative;
+    z-index: 8;
+}
+.pageul .on::after{
+    content: "";
+    width: 120px;
+    height: 120px;
+    display: block;
+    position: absolute;
+    left: -15px;
+    top: -35px;
+    background-image: url('../img/Ellipse2.png');
+    background-size: 100% 100%;
+    z-index: -1;
+}
+.container .containerBox .pageul div{
+    display: none;
+    animation: myfirst 0.5s infinite;
+}
+
+@keyframes myfirst
+{
+    0% {opacity: 1}
+    50% {opacity: 0;}
+    100% {opacity: 1}
+}

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yuan</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      #myVideo {
+        width: 100vw;
+        object-fit: cover;
+        position: relative;
+        top: -50px;
+        /* z-index: -1; */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hear {
+        position: relative;
+        margin: 0 auto;
+        grid-column: 3/4;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #hear img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #hear img.top:hover {
+        opacity: 0;
+      }
+      .arrowl {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        left: 30px;
+        bottom: 20px;
+      }
+      .arrowr {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        right: 30px;
+        bottom: 20px;
+      }
+      .question {
+        font-family: PlantinBoldItalic;
+        padding-bottom: 20px;
+      }
+      .answer {
+        font-family: plantin;
+        padding-bottom: 40px;
+      }
+      .italic {
+        font-family: Plantin-LightItalic;
+      }
+      .chinese {
+        font-family: huakan;
+      }
+      .left {
+        grid-column: 5/7;
+      }
+      .right {
+        grid-column: 6/8;
+      }
+      #blur1 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur1:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur6 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur6:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur7 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur7:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur8 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur8:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur9 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur9:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerBox">
+        <div class="tabbar tabbarTitle" style="position: absolute">
+          <a href="browse-by-words.html"
+            ><p data-index="1">Browse By <span class="span3">Words</span></p></a
+          >
+          <!-- <p data-index="2">Browse By <span class="span3">Images</span></p> -->
+          <a href="shell.html"
+            ><p data-index="3">
+              <span class="span1">CALL</span> <span class="span2">Me</span>
+              <span class="span1">By</span> <span class="span2">My Name</span>
+            </p></a
+          >
+          <a href="browse-by-love.html"
+            ><p data-index="4">Browse By <span class="span3">Love</span></p></a
+          >
+          <!-- <p data-index="5">More Stories</p> -->
+        </div>
+        <video autoplay muted loop id="myVideo">
+          <source src="video/蒋源.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <br />
+      <br />
+      <div class="grid-container">
+        <a href="winnie.html"><img class="arrowl" src="img/left.png" /></a>
+        <a href="skylar.html"><img class="arrowr" src="img/right.png" /></a>
+        <div id="hear">
+          <img class="bottom" src="img/hear_2.png" />
+          <img class="top" src="img/hear_1.png" />
+          <audio id="sound">
+            <source src="sound/蒋源.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        <p class="question right">What is your Chinese name?</p>
+        <p class="answer right">
+          <span class="chinese">蒋源</span
+          ><span class="italic"> Jiang Yuan</span>
+        </p>
+        <p class="question left">What does your name mean?</p>
+        <p class="answer left">
+          My parents told me that this name was decided before I was even born,
+          it was given by my mother. All three members of the family have
+          two-word names instead of the common three-word names. She gave me
+          this name because she liked the pronunciation of
+          <span class="italic" id="blur1">yuan</span>, if I was a boy back then,
+          she would gave me the word
+          <span class="chinese" id="blur2">原</span> which is also pronounced as
+          yuan. I personally like how it sounds too!
+        </p>
+        <p class="question right">
+          What is your English name? (Please write in pinyin if you don’t have
+          one)
+        </p>
+        <p class="answer right">
+          I used <span class="italic" id="blur3">Jane</span> back in high
+          school.
+        </p>
+        <p class="question left">Who gave you your English name?</p>
+        <p class="answer left">
+          Myself, I came up with the name Jane in kindergarten or elementary
+          school, back then my teacher is asking everyone’s English name. But I
+          don’t have one, the only English name I could think of at the time was
+          <span class="italic" id="blur4">Jane Austen</span>, so I just went by
+          it.
+        </p>
+        <p class="question right">
+          Is there a pronunciation/meaning connection between your English name
+          and Chinese name?
+        </p>
+        <p class="answer right">
+          <span class="italic">Jane</span> sounds a little like
+          <span class="italic">Jiang</span> and they started with the same
+          initial, <span class="italic">Jane Jiang</span> kinda sounds like the
+          name of super hero lol.
+        </p>
+        <p class="question left">
+          Have you ever abandoned your English name? What was the reason?
+        </p>
+        <p class="answer left">
+          When I was in high school, I started to think more about
+          <span id="blur5">my identity</span>, and it felt very painful to adopt
+          a name in someone else’s language. I was a completely different person
+          when I was speaking different languages, and many of my gray tumbling
+          thoughts could not be expressed well in English. In high school, I
+          crushed a white male teacher, although he is very sensitive and
+          vulnerable as for a white man. I realized our “sensitivities” are very
+          different, my experience, and my trauma growing up as an Asian is very
+          different from his. That’s when I realize
+          <span id="blur6">Jane doesn’t represent anything about me</span>, I
+          abandoned it with zero regrets.
+        </p>
+
+        <p class="question right">
+          Does your name ever give you any funny, embarrassing, or uncomfortable
+          experiences?
+        </p>
+        <p class="answer right">
+          When I use <span class="italic">Jane</span> as my name, while some
+          people do ask for my real name, most people just accept it (Even if
+          they asked for it they forgot it ). I never experienced any trouble
+          with <span class="italic">Jane</span>. But after I change it back, I
+          was asked by a foreign teacher if I was "yuan" of the
+          <span id="blur7">Chinese currency</span>, and to be honest, even as a
+          joke, I was very offended, I like the meaning of my name, and I don’t
+          want to be associated with currency. It is very annoying when people
+          don’t pay basic respect to my name.
+          <br />
+          <br />
+          Besides that, Americans can’t remember my name, never pronounce it
+          correctly, and always have to teach it several times (understandable,
+          they haven’t studied Chinese either). But even with all these
+          troubles, It’s still better than being called
+          <span class="italic">Jane</span>, at least every time they call me
+          Yuan I feel like they are calling me and not some hypocritical
+          personality.
+        </p>
+        <p class="question left">
+          Do you prefer your Chinese name or your English name? Which name
+          better represents your own identity?
+        </p>
+        <p class="answer left">
+          As I mentioned before, I prefer my Chinese name, and Jane itself
+          brings back a lot of painful memories. For example, when I stayed with
+          an American host family over a winter break, while they are very kind,
+          I experienced a lot of mild discrimination like being asked
+          <span id="blur8">if I ate dogs</span>, which I spent years afterward
+          trying to heal. I went to an international high school where almost
+          everyone had an English name ---- but we were all Chinese, these names
+          are created solely for the convenience of the foreign teachers.
+          <span id="blur9"
+            >I liked the meaning of the Chinese name in its own context, I liked
+            the pronunciation of Yuan, and I liked the way it was written. I
+            finally felt closer to my true self after I changed back to
+            Yuan.</span
+          >
+          When I use Jane, I always feel that it is the name of a white woman
+          living in 19th-century England.
+        </p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      var sound = document.getElementById("sound");
+      $(document).ready(function () {
+        $(".top").hover(function () {
+          sound.play();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Li</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      #myVideo {
+        width: 100vw;
+        object-fit: cover;
+        position: relative;
+        top: -50px;
+        /* z-index: -1; */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hear {
+        position: relative;
+        margin: 0 auto;
+        grid-column: 3/4;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #hear img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #hear img.top:hover {
+        opacity: 0;
+      }
+      .arrowl {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        left: 30px;
+        bottom: 20px;
+      }
+      .arrowr {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        right: 30px;
+        bottom: 20px;
+      }
+      .question {
+        font-family: PlantinBoldItalic;
+        padding-bottom: 20px;
+      }
+      .answer {
+        font-family: plantin;
+        padding-bottom: 40px;
+      }
+      .italic {
+        font-family: Plantin-LightItalic;
+      }
+      .chinese {
+        font-family: huakan;
+      }
+      .left {
+        grid-column: 5/7;
+      }
+      .right {
+        grid-column: 6/8;
+      }
+      #blur1 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur1:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerBox">
+        <div class="tabbar tabbarTitle" style="position: absolute">
+          <a href="browse-by-words.html"
+            ><p data-index="1">Browse By <span class="span3">Words</span></p></a
+          >
+          <!-- <p data-index="2">Browse By <span class="span3">Images</span></p> -->
+          <a href="shell.html"
+            ><p data-index="3">
+              <span class="span1">CALL</span> <span class="span2">Me</span>
+              <span class="span1">By</span> <span class="span2">My Name</span>
+            </p></a
+          >
+          <a href="browse-by-love.html"
+            ><p data-index="4">Browse By <span class="span3">Love</span></p></a
+          >
+          <!-- <p data-index="5">More Stories</p> -->
+        </div>
+        <video autoplay muted loop id="myVideo">
+          <source src="video/李熠雯.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <br />
+      <br />
+      <div class="grid-container">
+        <a href="mo.html"><img class="arrowl" src="img/left.png" /></a>
+        <a href="wanyi.html"><img class="arrowr" src="img/right.png" /></a>
+        <div id="hear">
+          <img class="bottom" src="img/hear_2.png" />
+          <img class="top" src="img/hear_1.png" />
+          <audio id="sound">
+            <source src="sound/李熠雯.m4a" type="audio/mpeg" />
+          </audio>
+        </div>
+        <p class="question right">What is your Chinese name?</p>
+        <p class="answer right">
+          <span class="chinese">李 熠雯</span
+          ><span class="italic"> Li Yiwen</span>
+        </p>
+        <p class="question left">What does your name mean?</p>
+        <p class="answer left">
+          <span class="chinese">李</span> <span class="italic">(li)</span> is my
+          family name, the same as my father and his father before him. In fact,
+          my family has our own little village in
+          <span class="italic">Henan province</span>, which is literally called
+          <span class="chinese">李家村</span>
+          <span class="italic">(the village of Li)</span>. I never had the
+          chance to go back and visit there but I’m one of them.
+          <br />
+          <br />
+          <span class="chinese">熠</span> <span class="italic">(yi)</span> means
+          <span id="blur1">shiny or glorious</span>, the character is hard to
+          write so a lot of people don’t recognize it the first time they see
+          it, I have to explain it over and over again. When I was little I
+          thought this must be the hardest word to write. And if you ever try to
+          type it on the computer you have to scroll all the way down to find
+          it.
+          <br />
+          <br />
+          <span class="chiense">雯</span>
+          <span class="italic">(wen)</span> means
+          <span id="blur2">colorful cloud</span>, it is commonly used in girl
+          names, it’s similar to <span class="chinese">文</span> but the
+          character itself looks cuter and more girly. So
+          <span class="chinese">熠雯</span> means glorious colorful cloud, by
+          giving me this name my parents wish me to be beautiful and girly.
+          Sadly it turned out to be the other way, but I’m happy with where I am
+          right now so it’s fine, I appreciated the wish that they had for me.
+        </p>
+        <p class="question right">
+          What is your English name? (Please write in pinyin if you don’t have
+          one)
+        </p>
+        <p class="answer right">
+          I had several English names.
+          <span class="italic">Amy, Lily and Polly.</span>
+        </p>
+        <p class="question left">Who gave you your English name?</p>
+        <p class="answer left">
+          My kindergarten teacher gave me the name
+          <span class="italic">Lily</span> because my family name is
+          <span class="italic">Li</span> and <span class="italic">Lily</span> is
+          my mother’s favorite flower. Amy is the name I used in primary school,
+          I don’t remember how I got it, I never liked it anyway, it sounds too
+          ordinary. <span class="italic">Polly</span> is the name I gave myself
+          when I was about 14 or 15. Back in middle school, there was a list of
+          girl names and boy names on the back of our English book, I just
+          picked one that looks cute. Funny thing is that, when I went to
+          Britain for a school trip, I lived in a host family, they have a
+          parrot named <span class="italic">Polly</span> as well. Later I was
+          told that the name <span class="italic">Polly</span> is usually given
+          to birds or tiny little girls, but certainly not a big girl like me, I
+          weighed twice as much as normal girls my age back in the day.
+        </p>
+        <p class="question right">
+          Is there a pronunciation/meaning connection between your English name
+          and Chinese name?
+        </p>
+        <p class="answer right">
+          Not really, I just pick them randomly. Except the name
+          <span class="italic">Lily</span>, which sounds like my family name.
+        </p>
+        <p class="question left">
+          Have you ever abandoned your English name? What was the reason?
+        </p>
+        <p class="answer left">
+          I stopped using English names when I went to London for my Master
+          degree. I did think of sticking with
+          <span class="italic">Polly</span>, but as you can see it doesn’t match
+          my appearance, also it’s a bit silly. But most importantly, I want to
+          be seen as who I am, not some carefully wrapped gift.
+          <span id="blur4"
+            >Using different names in different countries feels like wrapping
+            myself up in order to please people,</span
+          >
+          I have to admit that I was a people pleaser in the old days but I’m
+          done with it. I will present myself as who I am, take it or leave it.
+          I don’t want to hide my cultural background anymore in order to “blend
+          in”, I am a foreigner, I always will be, and I’m not embarrassed,
+          that’s the message that I want people to receive.
+        </p>
+
+        <p class="question right">
+          Does your name ever give you any funny, embarrassing, or uncomfortable
+          experiences?
+        </p>
+        <p class="answer right">
+          When I first met my tutors and classmates, I told them to call me
+          <span class="italic">Li</span>, not
+          <span class="italic">Lee</span> but <span class="italic">Li</span>,
+          just my family name. First, it is quite common to call people by their
+          family name in China, I personally do not feel distanced or
+          disrespected. Secondly, <span class="italic">Li</span> is very easy to
+          pronounce, so people shouldn’t feel awkward when they try to call me
+          but don’t know how to pronounce my name, I thought I was being nice.
+          But to my surprise, my tutor insists to call me
+          <span class="italic">Yiwen</span>, I never figure out why. Maybe it’s
+          rude for British people to call people by their surname? Maybe it
+          feels a little bit racist to call a Chinese
+          <span class="italic">“Li”</span>? It’s interesting how people choose
+          to respect me in their own way. Don’t get me wrong, I’m not upset or
+          offended, I appreciate that they tried their best to learn how to say
+          my name and respect my cultural heritage, it’s just interesting to see
+          how people deal with cultural shocks.
+        </p>
+        <p class="question left">
+          Do you prefer your Chinese name or your English name? Which name
+          better represents your own identity?
+        </p>
+        <p class="answer left">
+          Definitely my Chinese, I never liked my English names. Although my
+          Chinese name doesn’t match my look too, it holds
+          <span id="blur5">memories</span>, it’s how my loved ones remember me,
+          how people at work remember me, and how I remember me. Throughout my
+          life, I spent the best and the worst times with this name and we are
+          pretty much bonded for life, accepting my name feels like accepting my
+          bare self, I will not put makes ups on my name.
+        </p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      var sound = document.getElementById("sound");
+      $(document).ready(function () {
+        $(".top").hover(function () {
+          sound.play();
+        });
+      });
+    </script>
+  </body>
+</html>

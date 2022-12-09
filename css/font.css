@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'plantin';
+    src: url('../font/Plantin-Light.woff') format('woff'),
+         url('../font/Plantin-Light.ttf') format('truetype');
+
+}
+@font-face {
+    font-family: 'Plantin-LightItalic';
+    src: url('../font/Plantin-LightItalic.woff') format('woff'),
+         url('../font/Plantin-LightItalic.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'PlantinBoldItalic';
+    src: url('../font/Plantin-BoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'SnellRoundhand';
+    src: url('../font/SnellRoundhand.woff') format('woff'),
+         url('../font/SnellRoundhand.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'huakan';
+    src: url('../font/huakan.woff') format('woff'),
+         url('../font/huakan.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'DINAlternateBold';
+    src: url('../font/DINAlternateBold.woff') format('woff'),
+         url('../font/DINAlternateBold.ttf') format('truetype');
+}
+
+
+.tabbarTitle p{
+    font-family: plantin;
+}
+.tabbarTitle .span1{
+    font-family: DINAlternateBold;
+}
+.tabbarTitle .span3{
+    font-family: Plantin-LightItalic
+}
+.tabbarTitle .span2{
+    font-family: SnellRoundhand;
+}
+
+.words{
+    font-family: huakan;
+}
+
+.love p{
+    font-family: Plantin-LightItalic;
+}
+
+.container .containerBox .center p{
+    font-family: SnellRoundhand;
+}
+.container .containerBox .pageul .chinese{
+    font-family: huakan;
+}
+.container .containerBox .pageul .english{
+    font-family: SnellRoundhand;
+}
+.container .containerBox .pageul div .blue{
+    font-family: SnellRoundhand;
+    color: #6F73E7;
+    display: block;
+}
+.container .containerBox .pageul div .red{
+    font-family: huakan;
+    color: #F31618;
+    display: block;
+}

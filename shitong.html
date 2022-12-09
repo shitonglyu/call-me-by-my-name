@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shitong</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      #myVideo {
+        width: 100vw;
+        object-fit: cover;
+        position: relative;
+        top: -50px;
+        /* z-index: -1; */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hear {
+        position: relative;
+        margin: 0 auto;
+        grid-column: 3/4;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #hear img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #hear img.top:hover {
+        opacity: 0;
+      }
+      .arrowl {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        left: 30px;
+        bottom: 20px;
+      }
+      .arrowr {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        right: 30px;
+        bottom: 20px;
+      }
+      .question {
+        font-family: PlantinBoldItalic;
+        padding-bottom: 20px;
+      }
+      .answer {
+        font-family: plantin;
+        padding-bottom: 40px;
+      }
+      .italic {
+        font-family: Plantin-LightItalic;
+      }
+      .chinese {
+        font-family: huakan;
+      }
+      .left {
+        grid-column: 5/7;
+      }
+      .right {
+        grid-column: 6/8;
+      }
+      #blur1 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur1:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur6 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur6:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerBox">
+        <div class="tabbar tabbarTitle" style="position: absolute">
+          <a href="browse-by-words.html"
+            ><p data-index="1">Browse By <span class="span3">Words</span></p></a
+          >
+          <!-- <p data-index="2">Browse By <span class="span3">Images</span></p> -->
+          <a href="shell.html"
+            ><p data-index="3">
+              <span class="span1">CALL</span> <span class="span2">Me</span>
+              <span class="span1">By</span> <span class="span2">My Name</span>
+            </p></a
+          >
+          <a href="browse-by-love.html"
+            ><p data-index="4">Browse By <span class="span3">Love</span></p></a
+          >
+          <!-- <p data-index="5">More Stories</p> -->
+        </div>
+        <video autoplay muted loop id="myVideo">
+          <source src="video/吕诗彤.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <br />
+      <br />
+      <div class="grid-container">
+        <a href="roxie.html"><img class="arrowl" src="img/left.png" /></a>
+        <a href="phoebe.html"><img class="arrowr" src="img/right.png" /></a>
+        <div id="hear">
+          <img class="bottom" src="img/hear_2.png" />
+          <img class="top" src="img/hear_1.png" />
+          <audio id="sound">
+            <source src="sound/吕诗彤.m4a" type="audio/mpeg" />
+          </audio>
+        </div>
+        <p class="question right">What is your Chinese name?</p>
+        <p class="answer right">
+          <span class="chinese">吕 诗彤</span>
+          <span class="italic">Lyu Shitong</span>
+        </p>
+        <p class="question left">What does your name mean?</p>
+        <p class="answer left">
+          <span class="chinese">诗</span>
+          <span class="italic">(shi) </span>means
+          <span id="blur1">poem/poetic</span>, <span class="chinese">彤</span>
+          <span class="italic">(tong) </span>means
+          <span id="blur2">red/sunlight</span>. Also, my Mother’s family name is
+          <span class="chinese">师</span> <span class="italic">(shi)</span>,
+          which is pronounced the same as <span class="chinese">诗</span
+          ><span class="italic"> (shi)</span>, although this is not intended, I
+          am very happy that I could share my Mom’s name as well instead of just
+          the family name from my Dad.
+        </p>
+        <p class="question right">
+          What is your English name? (Please write in pinyin if you don’t have
+          one)
+        </p>
+        <p class="answer right"><span class="italic">Sally</span></p>
+        <p class="question left">Who gave you your English name?</p>
+        <p class="answer left">
+          It was randomly assigned by
+          <span id="blur3">my kindergarten teacher</span>
+        </p>
+        <p class="question right">
+          Is there a pronunciation/meaning connection between your English name
+          and Chinese name?
+        </p>
+        <p class="answer right">No</p>
+        <p class="question left">
+          Have you ever abandoned your English name? What was the reason?
+        </p>
+        <p class="answer left">
+          I stop using <span class="italic">Sally</span> in the first year of
+          college, It was sort of strange because I was finally in an
+          English-speaking environment and I abandoned my English name. Before,
+          I never had problems with <span class="italic">Sally</span> since I
+          feel like it is just a code name that I only use occasionally. But in
+          college, <span class="italic">Sally</span> became my “primary name”,
+          and all of a sudden I realized that
+          <span id="blur4"
+            >I am not <span class="italic">Sally</span> and probably never
+            should be.</span
+          >
+        </p>
+
+        <p class="question right">
+          Does your name ever give you any funny, embarrassing, or uncomfortable
+          experiences?
+        </p>
+        <p class="answer right">
+          There was one time I tried to purchase a new Airpod, and you know
+          Apple does offer the engraving service, I figured that it would be
+          nice to have my name on it in case I lost it. So on that customization
+          page, I typed in <span id="blur5" class="italic">“Shitong”</span>,
+          then a message pops up saying it contains “inappropriate words.” It
+          took me a second to realize apple probably only recognizes
+          <span id="blur6" class="italic">“Shit”</span> in my name. And I was
+          like...not sure how to react, I kinda found it funny, in a very
+          sarcastic way. My name means poems, red, and radiant sun, and all this
+          stupid AI sees is shit.
+        </p>
+        <p class="question left">
+          Do you prefer your Chinese name or your English name? Which name
+          better represents your own identity?
+        </p>
+        <p class="answer left">
+          I love my Chinese name. But to be honest I prefer my name to just be
+          Shitong without my surname. Chinese people, especially elder men,
+          usually have an immense attachment to their surnames, they are
+          desperate to carry on their family name. Some people would force the
+          female members of their family to keep having children until a boy is
+          born. To me, my family name is far less precious than the name my
+          parents gave me. I have no interest in passing it on and apparently, I
+          can’t since I am a girl lol. I also don’t think it is fair regarding
+          the fact that my Mom gave birth to me and I have to take my father’s
+          surname and become a part of the Lyu clan. I don’t want to, I wish my
+          name could just be Shitong, no more no less, just Shitong.
+        </p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      var sound = document.getElementById("sound");
+      $(document).ready(function () {
+        $(".top").hover(function () {
+          sound.play();
+        });
+      });
+    </script>
+  </body>
+</html>

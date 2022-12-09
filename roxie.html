@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roxie</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      #myVideo {
+        width: 100vw;
+        object-fit: cover;
+        position: relative;
+        top: -50px;
+        /* z-index: -1; */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #hear {
+        position: relative;
+        margin: 0 auto;
+        grid-column: 3/4;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      #hear img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #hear img.top:hover {
+        opacity: 0;
+      }
+      .arrowl {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        left: 30px;
+        bottom: 20px;
+      }
+      .arrowr {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        right: 30px;
+        bottom: 20px;
+      }
+      .question {
+        font-family: PlantinBoldItalic;
+        padding-bottom: 20px;
+      }
+      .answer {
+        font-family: plantin;
+        padding-bottom: 40px;
+      }
+      .italic {
+        font-family: Plantin-LightItalic;
+      }
+      .chinese {
+        font-family: huakan;
+      }
+      .left {
+        grid-column: 5/7;
+      }
+      .right {
+        grid-column: 6/8;
+      }
+      #blur1 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur1:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur2:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur3:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur4:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5 {
+        color: transparent;
+        text-shadow: #252eeb 0 0 12px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+      #blur5:hover {
+        color: black;
+        text-shadow: 0 0 0px;
+        -webkit-transition: color 3s ease-in-out;
+        -moz-transition: color 3s ease-in-out;
+        -o-transition: color 3s ease-in-out;
+        transition: color 3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerBox">
+        <div class="tabbar tabbarTitle" style="position: absolute">
+          <a href="browse-by-words.html"
+            ><p data-index="1">Browse By <span class="span3">Words</span></p></a
+          >
+          <!-- <p data-index="2">Browse By <span class="span3">Images</span></p> -->
+          <a href="shell.html"
+            ><p data-index="3">
+              <span class="span1">CALL</span> <span class="span2">Me</span>
+              <span class="span1">By</span> <span class="span2">My Name</span>
+            </p></a
+          >
+          <a href="browse-by-love.html"
+            ><p data-index="4">Browse By <span class="span3">Love</span></p></a
+          >
+          <!-- <p data-index="5">More Stories</p> -->
+        </div>
+        <video autoplay muted loop id="myVideo">
+          <source src="video/赵玥淇.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <br />
+      <br />
+      <div class="grid-container">
+        <a href="alice.html"><img class="arrowl" src="img/left.png" /></a>
+        <a href="shitong.html"><img class="arrowr" src="img/right.png" /></a>
+        <div id="hear">
+          <img class="bottom" src="img/hear_2.png" />
+          <img class="top" src="img/hear_1.png" />
+          <audio id="sound">
+            <source src="sound/赵玥琪.m4a" type="audio/mpeg" />
+          </audio>
+        </div>
+        <p class="question right">What is your Chinese name?</p>
+        <p class="answer right">
+          <span class="chinese">赵 玥淇</span
+          ><span class="italic"> Zhao Yueqi</span>
+        </p>
+        <p class="question left">What does your name mean?</p>
+        <p class="answer left">
+          <span class="chinese">玥</span>
+          <span class="italic">(yue)</span> means
+          <span id="blur1">bright pearl or night pearl</span>. According to my
+          birthday horoscope, I am short of <span id="blur2">water</span> in
+          five elements and need a word of water in my name to balance the
+          <span id="blur3">fire element</span>, <span class="chinese">淇</span>
+          <span class="italic">(qi)</span> comes from
+          <span class="chinese">淇水</span
+          ><span class="italic">(qi)</span> water, a place of cultural celebrity
+          in ancient times.
+        </p>
+        <p class="question right">
+          What is your English name? (Please write in pinyin if you don’t have
+          one)
+        </p>
+        <p class="answer right">
+          <span class="italic">Roxie</span>
+        </p>
+        <p class="question left">Who gave you your English name?</p>
+        <p class="answer left">
+          Myself, it is from the character Roxie Hart in the musical
+          <span class="italic">Chicago</span>, I don’t like Roxie Hart that much
+          but I think her ambition and shrewd plan is worth learning from me.
+          It’s also quite a special name that doesn’t always clash with others.
+        </p>
+        <p class="question right">
+          Is there a pronunciation/meaning connection between your English name
+          and Chinese name?
+        </p>
+        <p class="answer right">
+          No, but many people said Roxie and Yueqi sounds similar.
+        </p>
+        <p class="question left">
+          Have you ever abandoned your English name? What was the reason?
+        </p>
+        <p class="answer left">
+          Yes, in high school named myself
+          <span id="blur3">Hermione</span> since I am obsessed with Harry Potter
+          so much at that time. I changed this name in college because I
+          realized
+          <span id="blur4"
+            >I wasn’t smart at all and many people actually laughed when they
+            called me by this name.
+          </span>
+        </p>
+
+        <p class="question right">
+          Does your name ever give you any funny, embarrassing, or uncomfortable
+          experiences?
+        </p>
+        <p class="answer right">
+          I don’t have any negative experience with my Chinese name, but I
+          really don’t like it, I think it is very boring, and it doesn’t sound
+          good, I really resist people calling me by my Chinese name, I think
+          it’s a kind of native language shame, and I think it has something to
+          do with the tone as well, my name doesn’t quite fit the rhyme scheme.
+        </p>
+        <p class="question left">
+          Do you prefer your Chinese name or your English name? Which name
+          better represents your own identity?
+        </p>
+        <p class="answer left">
+          <span id="blur2"
+            >I don’t really care what people call me, and neither name gives me
+            a strong identity, but if I had to say it, I think I like the pinyin
+            of my Chinese name, I prefer to be called by called yueqi,
+            pronounced yuki, now people usually call me yuki or Roxie.</span
+          >
+        </p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+      var sound = document.getElementById("sound");
+      $(document).ready(function () {
+        $(".top").hover(function () {
+          sound.play();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.background{
+    background-image: url('../img/bg.png');
+    background-size: 100% 100%;
+}
+.container{
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+.container .containerBox{
+    width: 100%;
+    margin:0 auto;
+}
+.container .tabbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 30px 20px 0px;
+    z-index: 999;
+}
+.container .tabbar p{
+    cursor: pointer;
+}
+/* .container .tabbar .on{
+    border-bottom: 1px solid #000;
+} */
+.container .tabbar .on:hover{
+    text-decoration: underline;
+}
+.container .words ul{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.container .words li{
+    padding: 25px 0;
+}
+.container .words p{
+    font-size: 70px;
+    font-weight: 400;
+    text-align: center;
+}
+.container .words p i{
+    width: 60px;
+    display: inline-block;
+}
+.container .words ul li{
+    position: relative;
+}
+.container .words img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70%;
+    display: none;
+}
+.box{
+    display: none;
+}
+.box4{
+    display: block;
+    font-family: Plantin-LightItalic;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 3px silver;
+}
+
+
+
+
+a {
+    color: #3C3C3C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.box4 {
+    width: 1200px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* .box4_1 {
+    display: none;
+} */
+
+.box4_1>div,
+.box4_2>div {
+    position: relative;
+}
+
+.box4_1 p,
+.box4_2 p {
+    position: absolute;
+    color: red;
+    z-index: 2;
+}
+
+.box4_1 img,
+.box4_2 img {
+    height: 150px;
+}
+
+.box4_1 .img,
+.box4_2 .img {
+    position: relative;
+    display: flex;
+    font-size: 32px;
+    align-items: center;
+    height: 150px;
+    z-index: 1;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.box4_1 .img2,
+.box4_2 .img2 {
+    padding-top: 0;
+    margin-top: 300px;
+}
+
+.box4_1 .img p,
+.box4_2 .img p {
+    position: relative;
+    color: black;
+    font-family: 'PlantinTtf';
+    z-index: 1;
+}
+
+
+
+
+.box4_2 {
+    display: none;
+}
+
+.box4_2 p {
+    color: rgba(112, 117, 223, 1);
+}
+
+.box4_2 .p6 {
+    margin-top: 100px;
+}
+
+/* 动画 */
+
+.retrospection {
+    animation-name: retrospection;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.retrospection:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes retrospection {
+    from {
+        -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes retrospection {
+    from {
+        -moz-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes retrospection {
+    from {
+        -o-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@keyframes retrospection {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+.speculation {
+    animation-name: speculation;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+
+.speculation:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes speculation {
+    from {
+        -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@-moz-keyframes speculation {
+    from {
+        -moz-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@-o-keyframes speculation {
+    from {
+        -o-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@keyframes speculation {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+.activation {
+    animation-name: activation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.activation:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes activation {
+    from {
+        -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@-moz-keyframes activation {
+    from {
+        -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@-o-keyframes activation {
+    from {
+        -o-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+@keyframes activation {
+    from {
+        transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg) translateX(-150px) rotate(360deg);
+    }
+}
+
+.connection {
+    animation-name: connection;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+}
+
+.connection:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes connection {
+    from {
+        -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes connection {
+    from {
+        -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes connection {
+    from {
+        -o-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
+
+@keyframes connection {
+    from {
+        transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+}
